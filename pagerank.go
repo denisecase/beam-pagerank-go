@@ -192,16 +192,11 @@ func mapInputFile(s beam.Scope, inputFolder string, inputFile string) beam.PColl
 		return cleanString[iStart+1 : iClose]
 	}, linklinesPCol)
 
-	// Prepare the outlink web page filename and initial page rank
-	pageAndRankPCol := beam.ParDo(s, func(page string) string {
-		return fmt.Sprintf("%s,%.6f", page, 1.0)
-	}, linksPCol)
-
-	// preface with the page we're processing and include its page rank
+		// preface with the page we're processing and include its page rank
 	// Note: You can combine these steps or do them in a different order
 		map1OutPCol := beam.ParDo(s, func(linkString string) string {
-			return fmt.Sprintf("%s,%.6f,%s", inputFile, 1.0, linkString)
-		}, pageAndRankPCol)
+			return fmt.Sprintf("%s,%s", inputFile,linkString)
+		}, linksPCol)
 
   // DC: Start with just one transformation and return it. 
 	// DC: As it works, add transformation steps and update the PCollection returned
@@ -238,7 +233,7 @@ func main() {
 
   // DC: When done processing, write out our final PCollection (fancy array)
 	textio.Write(s, *output, merged)
-
+	
 	// Concept #1: The beamx.Run convenience wrapper allows a number of
 	// pre-defined runners to be used via the --runner flag.
 	if err := beamx.Run(context.Background(), p); err != nil {
