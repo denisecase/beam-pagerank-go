@@ -226,13 +226,13 @@ func main() {
 
 	inputDir := "web04/"
 	pcol1 := mapInputFile(s, inputDir, "go.md")
-	pcol2 := mapInputFile(s, inputDir, "java.md")
-	pcol3 := mapInputFile(s, inputDir, "python.md")
-	pcol4 := mapInputFile(s, inputDir, "README.md")
-	merged := beam.Flatten(s, pcol1, pcol2, pcol3, pcol4)
+	// pcol2 := mapInputFile(s, inputDir, "java.md")
+	// pcol3 := mapInputFile(s, inputDir, "python.md")
+	// pcol4 := mapInputFile(s, inputDir, "README.md")
+	// merged := beam.Flatten(s, pcol1, pcol2, pcol3, pcol4)
 
   // DC: When done processing, write out our final PCollection (fancy array)
-	textio.Write(s, *output, merged)
+	textio.Write(s, *output, pcol1)
 	
 	// Concept #1: The beamx.Run convenience wrapper allows a number of
 	// pre-defined runners to be used via the --runner flag.
