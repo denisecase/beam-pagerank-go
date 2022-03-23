@@ -105,6 +105,4 @@ From <https://blog.gopheracademy.com/advent-2018/apache-beam/>
 1. Create an empty repo (same folder name) in GitHub
 2. In your local folder, `git init`
 3. `git remote add origin https://github.com/denisecase/beam-pagerank-go.git`
-4. `git add .`
-5. `git commit -m "initial commit"`
-6. `git push -u origin main`
+4. git add / commit / push to repo
