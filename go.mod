@@ -2,10 +2,11 @@ module github.com/denisecase/beam-pagerank-go
 
 go 1.18
 
+require github.com/apache/beam/sdks/v2 v2.37.0
+
 require (
 	cloud.google.com/go v0.81.0 // indirect
 	cloud.google.com/go/storage v1.15.0 // indirect
-	github.com/apache/beam/sdks/v2 v2.37.0 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/uuid v1.3.0 // indirect

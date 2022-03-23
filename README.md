@@ -75,6 +75,8 @@ Review the local dependencies at C:\Users\<username>\AppData\Local\go-build.
 - go get - updates dependencies/versions listed in go.mod and updates local cache
 - go install - used to build and install the provided source file in $GOPATH$
 - go build - compiles and builds executable locally
+- go fmt - format go code
+- go mod tidy - keep things updated
 
 ## About Beam Pipelines
 
@@ -100,7 +102,7 @@ The emit func(...) is useful when the number of output elements differ to the nu
 
 From <https://blog.gopheracademy.com/advent-2018/apache-beam/>
 
-## Pushing to GitHub
+## Storing in GitHub
 
 1. Create an empty repo (same folder name) in GitHub
 2. In your local folder, `git init`
