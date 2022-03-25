@@ -1,0 +1,15 @@
+README.md, 1.000, 3, [(go.md, 1.000, 1),(java.md, 1.000, 1),(python.md, 1.000, 1)]
+go.md, 1.000, 1, [(README.md, 1.000, 3)]
+java.md, 1.000, 1, [(README.md, 1.000, 3)]
+python.md, 1.000, 1, [(README.md, 1.000, 3)]
+
+Reduce to one record per key (a ranked web page)
+   - add a count of the votes each page makes as you aggregate
+   - and a list of which pages they vote for
+   - provide initial page rank value
+
+Read as:
+
+"README.md, with a rank of 1.000 making 3 votes, is supported by a list of supporting pages."
+
+Format will stay the same - rerun this reduce process - calculated ranks will converge. 

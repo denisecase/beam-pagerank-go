@@ -1,0 +1,15 @@
+README.md, 1.94079, 3
+go.md, 0.68639, 1
+java.md, 0.68639, 1
+python.md, 0.68639, 1
+
+Rerun this process to recalculate PRs:
+
+Output shows results of prior calculation:
+
+PR(README.md) = 0.15 + 0.85(0.70227/1 + 0.70227/1 +0.70227/1) = 1.94079
+PR(go.md) = 0.15 + 0.85(1.89315/3) = 0.68639
+PR(java.md) = 0.15 + 0.85(1.89315/3) = 0.68639
+PR(python.md) = 0.15 + 0.85(1.89315/3) = 0.68639
+
+Still total = 4?

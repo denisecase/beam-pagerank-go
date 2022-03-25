@@ -1,0 +1,23 @@
+README.md, 2.700, 3
+go.md, 0.433, 1
+java.md, 0.433, 1
+python.md, 0.433, 1
+
+Rerun this process to recalculate PRs:
+
+Output shows results of initial calculation:
+
+PR(README.md) = 0.15 + 0.85(1/1 + 1/1 + 1/1) = 2.70
+PR(go.md) = 0.15 + 0.85(1/3) = 0.433
+PR(java.md) =  0.15 + 0.85(1/3) = 0.433
+PR(python.md) =  0.15 + 0.85(1/3) = 0.433
+
+Sum is about 4 (check)
+
+Delta = 
+|1-2.7| = 1.7 = 63% = still changing (a lot)
+|1-.433| = 0.567 = still changing (a lot)
+|1-.433| = 0.567 = still changing (a lot)
+|1-.433| = 0.567 = still changing (a lot)
+
+
