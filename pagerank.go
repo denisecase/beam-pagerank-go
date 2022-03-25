@@ -104,8 +104,11 @@ var (
 // done automatically by the starcgen code generator, or it can be done manually
 // by calling beam.RegisterFunction in an init() call.
 func init() {
+	// register custom DoFn (functions)
 	beam.RegisterFunction(formatFn)
+	// register custom element types (structs)
 	beam.RegisterType(reflect.TypeOf((*extractFn)(nil)))
+	beam.RegisterType(reflect.TypeOf((*smartPage)(nil)).Elem())
 }
 
 var (
@@ -119,6 +122,13 @@ var (
 // extractFn is a DoFn that emits the words in a given line and keeps a count for small words.
 type extractFn struct {
 	SmallWordLength int `json:"smallWordLength"`
+}
+
+// DC: Add new struct for map one KV pairs: page, outlink
+// DC: Remember to register element types in init()
+type smartPage struct {
+	K string
+	V string
 }
 
 func (f *extractFn) ProcessElement(ctx context.Context, line string, emit func(string)) {
